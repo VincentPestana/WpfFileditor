@@ -36,6 +36,9 @@ namespace WpfFileditor
 			if (dialogResult == true)
 			{
 				var filename = openFileDialog.FileName;
+
+				lblFilename.Content = filename;
+
 				// Read file
 				using var streamReader = new StreamReader(filename);
 				var textFromFile = streamReader.ReadToEnd();
