@@ -31,7 +31,7 @@ namespace WpfFileditor
 			txtMain.Text = "";
 			// Read file
 			using var sr = new StreamReader(@"C:\Users\Neo\Documents\Visual Studio 2017\Projects\WpfFileditor\WpfFileditor\test.txt");
-			var nextLine = sr.ReadLine();
+			var nextLine = sr.ReadToEnd();
 			do
 			{
 				txtMain.AppendText(nextLine);
