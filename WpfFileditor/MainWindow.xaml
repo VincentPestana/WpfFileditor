@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:WpfFileditor"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+	<Grid>
+		<TextBox x:Name="txtMain" HorizontalAlignment="Center" Margin="0,33,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="780" Height="391" AcceptsReturn="True"/>
+		<Button x:Name="btnLoadFile" Content="Button" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top" Click="btnLoadFile_Click"/>
 
-    </Grid>
+	</Grid>
 </Window>

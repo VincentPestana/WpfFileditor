@@ -1,0 +1,4 @@
+﻿This is a test file
+It has multiple lines
+and many
+texts
