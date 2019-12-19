@@ -28,15 +28,12 @@ namespace WpfFileditor
 
 		private void btnLoadFile_Click(object sender, RoutedEventArgs e)
 		{
+			
 			txtMain.Text = "";
 			// Read file
-			using var sr = new StreamReader(@"C:\Users\Neo\Documents\Visual Studio 2017\Projects\WpfFileditor\WpfFileditor\test.txt");
-			var nextLine = sr.ReadToEnd();
-			do
-			{
-				txtMain.AppendText(nextLine);
-				nextLine = sr.ReadLine();
-			} while (nextLine != null);
+			using var streamReader = new StreamReader("test.txt");
+			var textFromFile = streamReader.ReadToEnd();
+			txtMain.AppendText(textFromFile);
 
 		}
 	}
