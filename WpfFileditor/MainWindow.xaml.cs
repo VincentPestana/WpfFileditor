@@ -28,13 +28,23 @@ namespace WpfFileditor
 
 		private void btnLoadFile_Click(object sender, RoutedEventArgs e)
 		{
-			
 			txtMain.Text = "";
-			// Read file
-			using var streamReader = new StreamReader("test.txt");
-			var textFromFile = streamReader.ReadToEnd();
-			txtMain.AppendText(textFromFile);
 
+			// Select a file from disk
+			Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
+			var dialogResult = openFileDialog.ShowDialog();
+			if (dialogResult == true)
+			{
+				var filename = openFileDialog.FileName;
+				// Read file
+				using var streamReader = new StreamReader(filename);
+				var textFromFile = streamReader.ReadToEnd();
+				txtMain.AppendText(textFromFile);
+			}
+			else
+			{
+				// No file chosen
+			}
 		}
 	}
 }
