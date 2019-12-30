@@ -36,6 +36,16 @@ namespace WpfFileditor
 			ClearMainTextBox();
 		}
 
+		private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+		{
+			ExitApplication();
+		}
+
+		private void ExitApplication()
+		{
+			Application.Current.Shutdown();
+		}
+
 		private void ClearMainTextBox()
 		{
 			txtMain.Text = "";

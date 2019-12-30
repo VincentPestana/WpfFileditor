@@ -14,7 +14,7 @@
 				<MenuItem Header="_Save"/>
 				<MenuItem Header="_Close" Click="MenuItem_Click_1"/>
 				<Separator/>
-				<MenuItem Header="E_xit"/>
+				<MenuItem Header="E_xit" Click="MenuItem_Click_2"/>
 			</MenuItem>
 		</Menu>
 
