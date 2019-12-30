@@ -31,6 +31,17 @@ namespace WpfFileditor
 			LoadFile();
 		}
 
+		private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+		{
+			ClearMainTextBox();
+		}
+
+		private void ClearMainTextBox()
+		{
+			txtMain.Text = "";
+			winMain.Title = "WPF Based File Editor";
+		}
+
 		private void LoadFile()
 		{
 			txtMain.Text = "";
