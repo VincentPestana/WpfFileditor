@@ -5,12 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfFileditor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="WPF Based File Editor" Height="450" Width="800">
 	<Grid>
-		<TextBox x:Name="txtMain" HorizontalAlignment="Center" Margin="0,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="780" Height="391" AcceptsReturn="True"/>
-		<Button x:Name="btnLoadFile" Content="Open File" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top" Click="btnLoadFile_Click"/>
-		<Label x:Name="lblFilename" Content="Open a file" HorizontalAlignment="Left" Margin="231,5,0,0" VerticalAlignment="Top" Width="410"/>
-		<Button x:Name="btnSave" Content="Save File" HorizontalAlignment="Left" Margin="69,8,0,0" VerticalAlignment="Top"/>
+		<TextBox x:Name="txtMain" HorizontalAlignment="Center" Margin="0,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="780" Height="401" AcceptsReturn="True"/>
+		<Menu DockPanel.Dock="Top" VerticalAlignment="Top">
+			<MenuItem Header="_File">
+				<MenuItem Header="_Open" Click="MenuItem_Click"/>
+				<MenuItem Header="_Save"/>
+				<MenuItem Header="_Close"/>
+				<Separator/>
+				<MenuItem Header="E_xit"/>
+			</MenuItem>
+		</Menu>
 
 
 	</Grid>

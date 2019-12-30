@@ -26,7 +26,12 @@ namespace WpfFileditor
 			InitializeComponent();
 		}
 
-		private void btnLoadFile_Click(object sender, RoutedEventArgs e)
+		private void MenuItem_Click(object sender, RoutedEventArgs e)
+		{
+			LoadFile();
+		}
+
+		private void LoadFile()
 		{
 			txtMain.Text = "";
 
@@ -36,8 +41,6 @@ namespace WpfFileditor
 			if (dialogResult == true)
 			{
 				var filename = openFileDialog.FileName;
-
-				lblFilename.Content = filename;
 
 				// Read file
 				using var streamReader = new StreamReader(filename);
