@@ -42,6 +42,8 @@ namespace WpfFileditor
 			{
 				var filename = openFileDialog.FileName;
 
+				winMain.Title = filename + "  - WPF Based File Editor";
+
 				// Read file
 				using var streamReader = new StreamReader(filename);
 				var textFromFile = streamReader.ReadToEnd();
