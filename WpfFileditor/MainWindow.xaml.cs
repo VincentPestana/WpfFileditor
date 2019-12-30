@@ -66,8 +66,18 @@ namespace WpfFileditor
 
 		private void SaveFile()
 		{
-			// Save existing file
+			// TODO: Implement "Save As"
 
+			if (string.IsNullOrEmpty(_fileName))
+				return;
+
+			if (!File.Exists(_fileName))
+			{
+				MessageBox.Show("Filename does not exist - " + _fileName, "Filename does not exist");
+				return;
+			}
+
+			File.WriteAllText(_fileName, txtMain.Text);
 		}
 
 		private void MenuItem_Click(object sender, RoutedEventArgs e)
