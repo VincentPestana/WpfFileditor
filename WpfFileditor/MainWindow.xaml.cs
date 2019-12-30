@@ -21,9 +21,53 @@ namespace WpfFileditor
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		private string _fileName;
+
 		public MainWindow()
 		{
 			InitializeComponent();
+		}
+
+		private void ExitApplication()
+		{
+			Application.Current.Shutdown();
+		}
+
+		private void ClearMainTextBox()
+		{
+			txtMain.Text = "";
+			winMain.Title = "WPF Based File Editor";
+			_fileName = "";
+		}
+
+		private void LoadFile()
+		{
+			txtMain.Text = "";
+
+			// Select a file from disk
+			Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
+			var dialogResult = openFileDialog.ShowDialog();
+			if (dialogResult == true)
+			{
+				_fileName = openFileDialog.FileName;
+
+				winMain.Title = _fileName + "  - WPF Based File Editor";
+
+				// Read file
+				using var streamReader = new StreamReader(_fileName);
+				var textFromFile = streamReader.ReadToEnd();
+				txtMain.AppendText(textFromFile);
+			}
+			else
+			{
+				// No file chosen
+			}
+		}
+
+		private void SaveFile()
+		{
+			// Save existing file
+
 		}
 
 		private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -41,39 +85,9 @@ namespace WpfFileditor
 			ExitApplication();
 		}
 
-		private void ExitApplication()
+		private void MenuSave_Click(object sender, RoutedEventArgs e)
 		{
-			Application.Current.Shutdown();
-		}
-
-		private void ClearMainTextBox()
-		{
-			txtMain.Text = "";
-			winMain.Title = "WPF Based File Editor";
-		}
-
-		private void LoadFile()
-		{
-			txtMain.Text = "";
-
-			// Select a file from disk
-			Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
-			var dialogResult = openFileDialog.ShowDialog();
-			if (dialogResult == true)
-			{
-				var filename = openFileDialog.FileName;
-
-				winMain.Title = filename + "  - WPF Based File Editor";
-
-				// Read file
-				using var streamReader = new StreamReader(filename);
-				var textFromFile = streamReader.ReadToEnd();
-				txtMain.AppendText(textFromFile);
-			}
-			else
-			{
-				// No file chosen
-			}
+			SaveFile();
 		}
 	}
 }
