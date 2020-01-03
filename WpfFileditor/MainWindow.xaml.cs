@@ -21,6 +21,9 @@ namespace WpfFileditor
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		// TODO: Convert to config file
+		private readonly string TitleBar = "WPF Based File Editor";
+
 		private string _fileName;
 
 		public MainWindow()
@@ -36,7 +39,7 @@ namespace WpfFileditor
 		private void ClearMainTextBox()
 		{
 			txtMain.Text = "";
-			winMain.Title = "WPF Based File Editor";
+			winMain.Title = TitleBar;
 			_fileName = "";
 			MenuSave.IsEnabled = false;
 		}
@@ -52,7 +55,7 @@ namespace WpfFileditor
 			{
 				_fileName = openFileDialog.FileName;
 
-				winMain.Title = _fileName + "  - WPF Based File Editor";
+				winMain.Title = _fileName + "  - " + TitleBar;
 
 				// Read file
 				using var streamReader = new StreamReader(_fileName);
