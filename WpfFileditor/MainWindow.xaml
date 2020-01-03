@@ -11,7 +11,7 @@
 		<Menu DockPanel.Dock="Top" VerticalAlignment="Top">
 			<MenuItem Header="_File">
 				<MenuItem Header="_Open" Click="MenuItem_Click"/>
-				<MenuItem x:Name="MenuSave" Header="_Save" Click="MenuSave_Click"/>
+				<MenuItem x:Name="MenuSave" Header="_Save" Click="MenuSave_Click" IsEnabled="False"/>
 				<MenuItem Header="_Close" Click="MenuItem_Click_1"/>
 				<Separator/>
 				<MenuItem Header="E_xit" Click="MenuItem_Click_2"/>

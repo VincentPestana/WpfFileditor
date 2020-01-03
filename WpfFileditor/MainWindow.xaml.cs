@@ -38,6 +38,7 @@ namespace WpfFileditor
 			txtMain.Text = "";
 			winMain.Title = "WPF Based File Editor";
 			_fileName = "";
+			MenuSave.IsEnabled = false;
 		}
 
 		private void LoadFile()
@@ -57,6 +58,8 @@ namespace WpfFileditor
 				using var streamReader = new StreamReader(_fileName);
 				var textFromFile = streamReader.ReadToEnd();
 				txtMain.AppendText(textFromFile);
+
+				MenuSave.IsEnabled = true;
 			}
 			else
 			{
