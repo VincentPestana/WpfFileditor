@@ -74,6 +74,7 @@ namespace WpfFileditor
 		{
 			// TODO: Implement "Save As"
 
+			// TODO : This should call the SaveAs function as no file was opened
 			if (string.IsNullOrEmpty(_fileName))
 				return;
 
