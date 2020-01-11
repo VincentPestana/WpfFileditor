@@ -31,17 +31,23 @@ namespace WpfFileditor
 			InitializeComponent();
 		}
 
+		private void StartApplication()
+		{
+			ResetInterface();
+		}
+
 		private void ExitApplication()
 		{
 			Application.Current.Shutdown();
 		}
 
-		private void ClearMainTextBox()
+		private void ResetInterface()
 		{
 			txtMain.Text = "";
 			winMain.Title = TitleBar;
 			_fileName = "";
 			MenuSave.IsEnabled = false;
+			MenuClose.IsEnabled = false;
 		}
 
 		private void LoadFile()
@@ -63,6 +69,7 @@ namespace WpfFileditor
 				txtMain.AppendText(textFromFile);
 
 				MenuSave.IsEnabled = true;
+				MenuClose.IsEnabled = true;
 			}
 			else
 			{
@@ -94,7 +101,7 @@ namespace WpfFileditor
 
 		private void MenuItem_Click_1(object sender, RoutedEventArgs e)
 		{
-			ClearMainTextBox();
+			ResetInterface();
 		}
 
 		private void MenuItem_Click_2(object sender, RoutedEventArgs e)
@@ -105,6 +112,11 @@ namespace WpfFileditor
 		private void MenuSave_Click(object sender, RoutedEventArgs e)
 		{
 			SaveFile();
+		}
+
+		private void winMain_Loaded(object sender, RoutedEventArgs e)
+		{
+			StartApplication();
 		}
 	}
 }

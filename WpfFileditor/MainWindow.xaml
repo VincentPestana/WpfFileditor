@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfFileditor"
         mc:Ignorable="d"
-        Title="WPF Based File Editor" Height="450" Width="800">
+        Title="WPF Based File Editor" Height="450" Width="800" Loaded="winMain_Loaded">
 	<Grid>
 		<TextBox x:Name="txtMain" HorizontalAlignment="Center" Margin="0,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="780" Height="401" AcceptsReturn="True"/>
 		<Menu DockPanel.Dock="Top" VerticalAlignment="Top">
 			<MenuItem Header="_File">
 				<MenuItem Header="_Open" Click="MenuItem_Click"/>
 				<MenuItem x:Name="MenuSave" Header="_Save" Click="MenuSave_Click"/>
-				<MenuItem Header="_Close" Click="MenuItem_Click_1"/>
+				<MenuItem x:Name="MenuClose" Header="_Close" Click="MenuItem_Click_1"/>
 				<Separator/>
 				<MenuItem Header="E_xit" Click="MenuItem_Click_2"/>
 			</MenuItem>
