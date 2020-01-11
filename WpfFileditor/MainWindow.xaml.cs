@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -55,19 +56,18 @@ namespace WpfFileditor
 			txtMain.Text = "";
 
 			// Select a file from disk
-			Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
+			OpenFileDialog openFileDialog = new OpenFileDialog();
 			var dialogResult = openFileDialog.ShowDialog();
 			if (dialogResult == true)
 			{
 				_fileName = openFileDialog.FileName;
-
-				winMain.Title = _fileName + "  - " + TitleBar;
 
 				// Read file
 				using var streamReader = new StreamReader(_fileName);
 				var textFromFile = streamReader.ReadToEnd();
 				txtMain.AppendText(textFromFile);
 
+				winMain.Title = _fileName + "  - " + TitleBar;
 				MenuSave.IsEnabled = true;
 				MenuClose.IsEnabled = true;
 			}
@@ -79,9 +79,7 @@ namespace WpfFileditor
 
 		private void SaveFile()
 		{
-			// TODO: Implement "Save As"
-
-			// TODO : This should call the SaveAs function as no file was opened
+			// No filename specified, do nothing
 			if (string.IsNullOrEmpty(_fileName))
 				return;
 
@@ -92,6 +90,28 @@ namespace WpfFileditor
 			}
 
 			File.WriteAllText(_fileName, txtMain.Text);
+		}
+
+		private void SaveFileAs()
+		{
+			// TODO Should we allow this if there is no text entered
+			SaveFileDialog saveFileDialog = new SaveFileDialog();
+			saveFileDialog.Title = "Save File As";
+			saveFileDialog.ShowDialog();
+			var saveFileAsName = saveFileDialog.FileName;
+
+			// Above save dialog deals with file overwriting
+			if (File.Exists(saveFileAsName))
+			{
+
+			}
+
+			File.WriteAllText(saveFileAsName, txtMain.Text);
+
+			MenuSave.IsEnabled = true;
+			MenuClose.IsEnabled = true;
+			_fileName = saveFileAsName;
+			winMain.Title = saveFileAsName + " - " + TitleBar;
 		}
 
 		private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -117,6 +137,11 @@ namespace WpfFileditor
 		private void winMain_Loaded(object sender, RoutedEventArgs e)
 		{
 			StartApplication();
+		}
+
+		private void MenuSaveAs_Click(object sender, RoutedEventArgs e)
+		{
+			SaveFileAs();
 		}
 	}
 }
