@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfFileditor"
         mc:Ignorable="d"
-        Title="WPF Based File Editor" Height="450" Width="800" Loaded="winMain_Loaded">
+        Title="WPF Based File Editor" Height="468" Width="800" Loaded="winMain_Loaded">
 	<Grid>
-		<TextBox x:Name="txtMain" HorizontalAlignment="Center" Margin="0,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="780" Height="401" AcceptsReturn="True"/>
+		<TextBox x:Name="txtMain" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="788" Height="372" AcceptsReturn="True"/>
 		<Menu DockPanel.Dock="Top" VerticalAlignment="Top">
 			<MenuItem Header="_File">
 				<MenuItem Header="_Open" Click="MenuItem_Click"/>
@@ -18,6 +18,7 @@
 				<MenuItem Header="E_xit" Click="MenuItem_Click_2"/>
 			</MenuItem>
 		</Menu>
+		<Label x:Name="lblEncoding" Content="File Encoding" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,398,0,0"/>
 
 
 	</Grid>
