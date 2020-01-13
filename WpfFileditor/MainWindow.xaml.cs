@@ -49,6 +49,7 @@ namespace WpfFileditor
 			_fileName = "";
 			MenuSave.IsEnabled = false;
 			MenuClose.IsEnabled = false;
+			lblEncoding.Content = "";
 		}
 
 		private void LoadFile()
@@ -75,6 +76,8 @@ namespace WpfFileditor
 			{
 				// No file chosen
 			}
+			
+			SetEncodingView();
 		}
 
 		private void SaveFile()
@@ -90,6 +93,8 @@ namespace WpfFileditor
 			}
 
 			File.WriteAllText(_fileName, txtMain.Text);
+
+			SetEncodingView();
 		}
 
 		private void SaveFileAs()
@@ -112,6 +117,11 @@ namespace WpfFileditor
 			MenuClose.IsEnabled = true;
 			_fileName = saveFileAsName;
 			winMain.Title = saveFileAsName + " - " + TitleBar;
+		}
+
+		private void SetEncodingView()
+		{
+			lblEncoding.Content = FileHelper.GetEncoding(_fileName).HeaderName;
 		}
 
 		private void MenuItem_Click(object sender, RoutedEventArgs e)
