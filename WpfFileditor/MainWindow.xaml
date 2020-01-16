@@ -10,10 +10,10 @@
 		<TextBox x:Name="txtMain" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="788" Height="372" AcceptsReturn="True"/>
 		<Menu DockPanel.Dock="Top" VerticalAlignment="Top">
 			<MenuItem Header="_File">
+				<MenuItem x:Name="MenuClose" Header="_New" Click="MenuItem_Click_1"/>
 				<MenuItem Header="_Open" Click="MenuItem_Click"/>
 				<MenuItem x:Name="MenuSave" Header="_Save" Click="MenuSave_Click"/>
 				<MenuItem x:Name="MenuSaveAs" Header="Save _As" Click="MenuSaveAs_Click" />
-				<MenuItem x:Name="MenuClose" Header="_Clear" Click="MenuItem_Click_1"/>
 				<Separator/>
 				<MenuItem Header="E_xit" Click="MenuItem_Click_2"/>
 			</MenuItem>
