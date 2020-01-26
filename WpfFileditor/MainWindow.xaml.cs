@@ -119,6 +119,12 @@ namespace WpfFileditor
 			winMain.Title = saveFileAsName + " - " + TitleBar;
 		}
 
+		private void CopySelectedText()
+		{
+			var selectedText = txtMain.SelectedText;
+			Clipboard.SetText(selectedText);
+		}
+
 		private void SetEncodingView()
 		{
 			lblEncoding.Content = FileHelper.GetEncoding(_fileName).HeaderName;
@@ -153,5 +159,11 @@ namespace WpfFileditor
 		{
 			SaveFileAs();
 		}
+
+		private void MenuEditCopy_Click(object sender, RoutedEventArgs e)
+		{
+			CopySelectedText();
+		}
+
 	}
 }
