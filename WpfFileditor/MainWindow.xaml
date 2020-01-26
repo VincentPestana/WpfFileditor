@@ -17,6 +17,10 @@
 				<Separator/>
 				<MenuItem Header="E_xit" Click="MenuItem_Click_2"/>
 			</MenuItem>
+			<MenuItem Header="_Edit">
+				<MenuItem x:Name="MenuEditCopy" Header="_Copy" Click="MenuEditCopy_Click" />
+				<MenuItem Header="_Paste" />
+			</MenuItem>
 		</Menu>
 		<Label x:Name="lblEncoding" Content="File Encoding" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,398,0,0"/>
 
