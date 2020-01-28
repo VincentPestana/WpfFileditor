@@ -19,7 +19,7 @@
 			</MenuItem>
 			<MenuItem Header="_Edit">
 				<MenuItem x:Name="MenuEditCopy" Header="_Copy" Click="MenuEditCopy_Click" />
-				<MenuItem Header="_Paste" />
+				<MenuItem x:Name="MenuEditPaste" Header="_Paste" Click="MenuEditPaste_Click" />
 			</MenuItem>
 		</Menu>
 		<Label x:Name="lblEncoding" Content="File Encoding" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,398,0,0"/>

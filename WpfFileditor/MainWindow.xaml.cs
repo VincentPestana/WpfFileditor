@@ -125,6 +125,13 @@ namespace WpfFileditor
 			Clipboard.SetText(selectedText);
 		}
 
+		private void PasteClipboardText()
+		{
+			var caretIndex = txtMain.CaretIndex;
+			txtMain.Text = txtMain.Text.Substring(0, caretIndex) + Clipboard.GetText() + txtMain.Text.Substring(caretIndex);
+			txtMain.CaretIndex = caretIndex + 1;
+		}
+
 		private void SetEncodingView()
 		{
 			lblEncoding.Content = FileHelper.GetEncoding(_fileName).HeaderName;
@@ -165,5 +172,9 @@ namespace WpfFileditor
 			CopySelectedText();
 		}
 
+		private void MenuEditPaste_Click(object sender, RoutedEventArgs e)
+		{
+			PasteClipboardText();
+		}
 	}
 }
