@@ -129,7 +129,12 @@ namespace WpfFileditor
 		{
 			var caretIndex = txtMain.CaretIndex;
 			txtMain.Text = txtMain.Text.Substring(0, caretIndex) + Clipboard.GetText() + txtMain.Text.Substring(caretIndex);
-			txtMain.CaretIndex = caretIndex + 1;
+
+			if (caretIndex == 0)
+				// Main text was empty on paste
+				txtMain.CaretIndex = txtMain.Text.Length;
+			else
+				txtMain.CaretIndex = caretIndex + 1;
 		}
 
 		private void SetEncodingView()
