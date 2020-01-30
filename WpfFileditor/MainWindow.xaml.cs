@@ -137,11 +137,22 @@ namespace WpfFileditor
 				txtMain.CaretIndex = caretIndex + 1;
 		}
 
+		private void UndoText()
+		{
+			txtMain.Undo();
+		}
+
+		private void RedoText()
+		{
+			txtMain.Redo();
+		}
+
 		private void SetEncodingView()
 		{
 			lblEncoding.Content = FileHelper.GetEncoding(_fileName).HeaderName;
 		}
 
+		#region Form events
 		private void MenuItem_Click(object sender, RoutedEventArgs e)
 		{
 			LoadFile();
@@ -181,5 +192,16 @@ namespace WpfFileditor
 		{
 			PasteClipboardText();
 		}
+
+		private void MenuEditUndo_Click(object sender, RoutedEventArgs e)
+		{
+			UndoText();
+		}
+
+		private void MenuEditRedo_Click(object sender, RoutedEventArgs e)
+		{
+			RedoText();
+		}
+		#endregion
 	}
 }
