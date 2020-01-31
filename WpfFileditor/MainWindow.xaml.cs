@@ -42,6 +42,9 @@ namespace WpfFileditor
 			Application.Current.Shutdown();
 		}
 
+		/// <summary>
+		/// Resets variables used for UI
+		/// </summary>
 		private void ResetInterface()
 		{
 			txtMain.Text = "";
@@ -52,6 +55,9 @@ namespace WpfFileditor
 			lblEncoding.Content = "";
 		}
 
+		/// <summary>
+		/// Open a OS dialog to select a file
+		/// </summary>
 		private void LoadFile()
 		{
 			txtMain.Text = "";
@@ -80,6 +86,9 @@ namespace WpfFileditor
 			SetEncodingView();
 		}
 
+		/// <summary>
+		/// Open a OS dialog to save the file
+		/// </summary>
 		private void SaveFile()
 		{
 			// No filename specified, do nothing
@@ -137,11 +146,17 @@ namespace WpfFileditor
 				txtMain.CaretIndex = caretIndex + 1;
 		}
 
+		/// <summary>
+		/// Uses the TextBox built in Undo
+		/// </summary>
 		private void UndoText()
 		{
 			txtMain.Undo();
 		}
 
+		/// <summary>
+		/// Uses the TextBox built in Redo
+		/// </summary>
 		private void RedoText()
 		{
 			txtMain.Redo();
