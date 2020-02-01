@@ -21,6 +21,7 @@
 				<MenuItem x:Name="MenuEditUndo" Header="_Undo" Click="MenuEditUndo_Click" />
 				<MenuItem x:Name="MenuEditRedo" Header="_Redo" Click="MenuEditRedo_Click" />
 				<Separator/>
+				<MenuItem x:Name="MenuEditCut" Header="Cut" Click="MenuEditCut_Click" />
 				<MenuItem x:Name="MenuEditCopy" Header="_Copy" Click="MenuEditCopy_Click" />
 				<MenuItem x:Name="MenuEditPaste" Header="_Paste" Click="MenuEditPaste_Click" />
 			</MenuItem>

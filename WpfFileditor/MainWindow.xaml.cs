@@ -128,6 +128,11 @@ namespace WpfFileditor
 			winMain.Title = saveFileAsName + " - " + TitleBar;
 		}
 
+		private void CutSelectedText()
+		{
+			throw new NotImplementedException();
+		}
+
 		private void CopySelectedText()
 		{
 			var selectedText = txtMain.SelectedText;
@@ -216,6 +221,11 @@ namespace WpfFileditor
 		private void MenuEditRedo_Click(object sender, RoutedEventArgs e)
 		{
 			RedoText();
+		}
+
+		private void MenuEditCut_Click(object sender, RoutedEventArgs e)
+		{
+			CutSelectedText();
 		}
 		#endregion
 	}
