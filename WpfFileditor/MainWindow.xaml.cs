@@ -130,7 +130,10 @@ namespace WpfFileditor
 
 		private void CutSelectedText()
 		{
-			throw new NotImplementedException();
+			CopySelectedText();
+			
+			// Remove copied text
+			txtMain.Text = txtMain.Text.Substring(0, txtMain.SelectionStart) + txtMain.Text.Substring(txtMain.CaretIndex + txtMain.SelectionLength);
 		}
 
 		private void CopySelectedText()
