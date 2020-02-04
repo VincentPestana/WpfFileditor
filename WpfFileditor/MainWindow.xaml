@@ -9,7 +9,7 @@
 	<Grid>
 		<TextBox x:Name="txtMain" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="788" Height="372" AcceptsReturn="True"/>
 		<Menu DockPanel.Dock="Top" VerticalAlignment="Top">
-			<MenuItem Header="_File">
+			<MenuItem x:Name="MenuFile" Header="_File" Click="MenuFile_Click">
 				<MenuItem x:Name="MenuClose" Header="_New" Click="MenuItem_Click_1"/>
 				<MenuItem Header="_Open" Click="MenuItem_Click"/>
 				<MenuItem x:Name="MenuSave" Header="_Save" Click="MenuSave_Click"/>
@@ -17,7 +17,7 @@
 				<Separator/>
 				<MenuItem Header="E_xit" Click="MenuItem_Click_2"/>
 			</MenuItem>
-			<MenuItem Header="_Edit">
+			<MenuItem x:Name="MenuEdit" Header="_Edit" Click="MenuEdit_Click">
 				<MenuItem x:Name="MenuEditUndo" Header="_Undo" Click="MenuEditUndo_Click" />
 				<MenuItem x:Name="MenuEditRedo" Header="_Redo" Click="MenuEditRedo_Click" />
 				<Separator/>

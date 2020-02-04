@@ -231,5 +231,15 @@ namespace WpfFileditor
 			CutSelectedText();
 		}
 		#endregion
+
+		private void MenuFile_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void MenuEdit_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
 	}
 }
