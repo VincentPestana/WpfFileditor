@@ -170,6 +170,21 @@ namespace WpfFileditor
 			txtMain.Redo();
 		}
 
+		private void MenuFileInitialize()
+		{
+			throw new NotImplementedException();
+		}
+
+		private void MenuEditInitialize()
+		{
+			if (!Clipboard.ContainsText())
+			{
+				// TODO disable paste
+			}
+
+			// TODO: Check if there is selected text, disable copy
+		}
+
 		private void SetEncodingView()
 		{
 			lblEncoding.Content = FileHelper.GetEncoding(_fileName).HeaderName;
@@ -230,16 +245,18 @@ namespace WpfFileditor
 		{
 			CutSelectedText();
 		}
-		#endregion
+		
 
 		private void MenuFile_Click(object sender, RoutedEventArgs e)
 		{
-
+			MenuFileInitialize();
 		}
 
 		private void MenuEdit_Click(object sender, RoutedEventArgs e)
 		{
-
+			MenuEditInitialize();
 		}
+
+		#endregion
 	}
 }
