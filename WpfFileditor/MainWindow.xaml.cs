@@ -177,12 +177,16 @@ namespace WpfFileditor
 
 		private void MenuEditInitialize()
 		{
-			if (!Clipboard.ContainsText())
-			{
-				// TODO disable paste
-			}
+			// Enable/disable paste
+			MenuEditPaste.IsEnabled = Clipboard.ContainsText();
+			
+			// Check if there is selected text, disable copy and cut
+			MenuEditCopy.IsEnabled = txtMain.SelectedText.Length > 0;
+			MenuEditCut.IsEnabled = txtMain.SelectedText.Length > 0;
 
-			// TODO: Check if there is selected text, disable copy
+			// Undo / Redo
+			MenuEditUndo.IsEnabled = txtMain.CanUndo;
+			MenuEditRedo.IsEnabled = txtMain.CanRedo;
 		}
 
 		private void SetEncodingView()
