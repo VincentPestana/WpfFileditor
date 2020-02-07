@@ -131,9 +131,9 @@ namespace WpfFileditor
 		private void CutSelectedText()
 		{
 			CopySelectedText();
-			
+
 			// Remove copied text
-			txtMain.Text = txtMain.Text.Substring(0, txtMain.SelectionStart) + txtMain.Text.Substring(txtMain.CaretIndex + txtMain.SelectionLength);
+			DeleteSelectedText();
 		}
 
 		private void CopySelectedText()
@@ -152,6 +152,11 @@ namespace WpfFileditor
 				txtMain.CaretIndex = txtMain.Text.Length;
 			else
 				txtMain.CaretIndex = caretIndex + 1;
+		}
+
+		private void DeleteSelectedText()
+		{
+			txtMain.Text = txtMain.Text.Substring(0, txtMain.SelectionStart) + txtMain.Text.Substring(txtMain.CaretIndex + txtMain.SelectionLength);
 		}
 
 		/// <summary>
@@ -261,6 +266,10 @@ namespace WpfFileditor
 			MenuEditInitialize();
 		}
 
+		private void MenuEditDelete_Click(object sender, RoutedEventArgs e)
+		{
+			DeleteSelectedText();
+		}
 		#endregion
 	}
 }

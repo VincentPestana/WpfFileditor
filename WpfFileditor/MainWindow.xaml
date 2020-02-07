@@ -24,6 +24,7 @@
 				<MenuItem x:Name="MenuEditCut" Header="Cut" Click="MenuEditCut_Click" />
 				<MenuItem x:Name="MenuEditCopy" Header="_Copy" Click="MenuEditCopy_Click" />
 				<MenuItem x:Name="MenuEditPaste" Header="_Paste" Click="MenuEditPaste_Click" />
+				<MenuItem x:Name="MenuEditDelete" Header="_Delete" Click="MenuEditDelete_Click" />
 			</MenuItem>
 		</Menu>
 		<Label x:Name="lblEncoding" Content="File Encoding" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,398,0,0"/>
