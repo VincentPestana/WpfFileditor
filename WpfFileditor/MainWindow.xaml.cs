@@ -255,15 +255,14 @@ namespace WpfFileditor
 			CutSelectedText();
 		}
 		
-
 		private void MenuFile_Click(object sender, RoutedEventArgs e)
 		{
-			MenuFileInitialize();
+			//MenuFileInitialize();
 		}
 
 		private void MenuEdit_Click(object sender, RoutedEventArgs e)
 		{
-			MenuEditInitialize();
+			//MenuEditInitialize();
 		}
 
 		private void MenuEditDelete_Click(object sender, RoutedEventArgs e)

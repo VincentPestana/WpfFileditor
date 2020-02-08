@@ -14,6 +14,7 @@
 				<MenuItem Header="_Open" Click="MenuItem_Click"/>
 				<MenuItem x:Name="MenuSave" Header="_Save" Click="MenuSave_Click"/>
 				<MenuItem x:Name="MenuSaveAs" Header="Save _As" Click="MenuSaveAs_Click" />
+				<MenuItem x:Name="MenuFileReloadFile" Header="_Reload file from disk" />
 				<Separator/>
 				<MenuItem Header="E_xit" Click="MenuItem_Click_2"/>
 			</MenuItem>
@@ -25,6 +26,8 @@
 				<MenuItem x:Name="MenuEditCopy" Header="_Copy" Click="MenuEditCopy_Click" />
 				<MenuItem x:Name="MenuEditPaste" Header="_Paste" Click="MenuEditPaste_Click" />
 				<MenuItem x:Name="MenuEditDelete" Header="_Delete" Click="MenuEditDelete_Click" />
+				<Separator/>
+				<MenuItem x:Name="MenuEditSelectAll" Header="_Select All" />
 			</MenuItem>
 		</Menu>
 		<Label x:Name="lblEncoding" Content="File Encoding" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,398,0,0"/>
