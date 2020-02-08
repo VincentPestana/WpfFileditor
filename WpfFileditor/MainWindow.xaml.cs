@@ -175,6 +175,11 @@ namespace WpfFileditor
 			txtMain.Redo();
 		}
 
+		private void SelectAllText()
+		{
+			txtMain.SelectAll();
+		}
+
 		private void MenuFileInitialize()
 		{
 			throw new NotImplementedException();
@@ -268,6 +273,11 @@ namespace WpfFileditor
 		private void MenuEditDelete_Click(object sender, RoutedEventArgs e)
 		{
 			DeleteSelectedText();
+		}
+
+		private void MenuEditSelectAll_Click(object sender, RoutedEventArgs e)
+		{
+			SelectAllText();
 		}
 		#endregion
 	}
