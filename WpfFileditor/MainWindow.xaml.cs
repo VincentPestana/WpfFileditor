@@ -86,6 +86,16 @@ namespace WpfFileditor
 			SetEncodingView();
 		}
 
+		private void ReloadCurrentFile()
+		{
+			if (string.IsNullOrEmpty(_fileName))
+				return;
+
+			using var streamReader = new StreamReader(_fileName);
+			var textFromFile = streamReader.ReadToEnd();
+			txtMain.Text = textFromFile;
+		}
+
 		/// <summary>
 		/// Open a OS dialog to save the file
 		/// </summary>
@@ -278,6 +288,11 @@ namespace WpfFileditor
 		private void MenuEditSelectAll_Click(object sender, RoutedEventArgs e)
 		{
 			SelectAllText();
+		}
+
+		private void MenuFileReloadFile_Click(object sender, RoutedEventArgs e)
+		{
+			ReloadCurrentFile();
 		}
 		#endregion
 	}

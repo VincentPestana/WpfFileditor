@@ -14,7 +14,7 @@
 				<MenuItem Header="_Open" Click="MenuItem_Click"/>
 				<MenuItem x:Name="MenuSave" Header="_Save" Click="MenuSave_Click"/>
 				<MenuItem x:Name="MenuSaveAs" Header="Save _As" Click="MenuSaveAs_Click" />
-				<MenuItem x:Name="MenuFileReloadFile" Header="_Reload file from disk" />
+				<MenuItem x:Name="MenuFileReloadFile" Header="_Reload file from disk" Click="MenuFileReloadFile_Click" />
 				<Separator/>
 				<MenuItem Header="E_xit" Click="MenuItem_Click_2"/>
 			</MenuItem>
