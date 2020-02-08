@@ -72,7 +72,7 @@ namespace WpfFileditor
 				// Read file
 				using var streamReader = new StreamReader(_fileName);
 				var textFromFile = streamReader.ReadToEnd();
-				txtMain.AppendText(textFromFile);
+				txtMain.Text = textFromFile;
 
 				winMain.Title = _fileName + "  - " + TitleBar;
 				MenuSave.IsEnabled = true;
