@@ -29,6 +29,12 @@
 				<Separator/>
 				<MenuItem x:Name="MenuEditSelectAll" Header="_Select All" Click="MenuEditSelectAll_Click" />
 			</MenuItem>
+			<MenuItem x:Name="MenuOperations" Header="_Operations">
+				<MenuItem Header="_Uppercase" />
+				<MenuItem Header="_Lowercase" />
+				<MenuItem Header="_Invert Case" />
+				
+			</MenuItem>
 		</Menu>
 		<Label x:Name="lblEncoding" Content="File Encoding" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,398,0,0"/>
 
