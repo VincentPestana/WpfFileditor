@@ -30,7 +30,7 @@
 				<MenuItem x:Name="MenuEditSelectAll" Header="_Select All" Click="MenuEditSelectAll_Click" />
 			</MenuItem>
 			<MenuItem x:Name="MenuOperations" Header="_Operations">
-				<MenuItem Header="_Uppercase" />
+				<MenuItem x:Name="MenuOpUppercase" Header="_Uppercase" Click="MenuOpUppercase_Click" />
 				<MenuItem Header="_Lowercase" />
 				<MenuItem Header="_Invert Case" />
 				

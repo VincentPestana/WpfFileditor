@@ -209,6 +209,21 @@ namespace WpfFileditor
 			MenuEditRedo.IsEnabled = txtMain.CanRedo;
 		}
 
+		private void TextToUppercase()
+		{
+			// Make the selected text uppercase
+			if (txtMain.SelectionLength > 0)
+			{
+				txtMain.Text = txtMain.Text.Substring(0, txtMain.SelectionStart) + txtMain.SelectedText.ToUpper() + txtMain.Text.Substring(txtMain.CaretIndex + txtMain.SelectionLength);
+			}
+			else
+			{
+				// Make the line uppercase
+				
+			}
+
+		}
+
 		private void SetEncodingView()
 		{
 			lblEncoding.Content = FileHelper.GetEncoding(_fileName).HeaderName;
@@ -293,6 +308,11 @@ namespace WpfFileditor
 		private void MenuFileReloadFile_Click(object sender, RoutedEventArgs e)
 		{
 			ReloadCurrentFile();
+		}
+
+		private void MenuOpUppercase_Click(object sender, RoutedEventArgs e)
+		{
+			TextToUppercase();
 		}
 		#endregion
 	}
