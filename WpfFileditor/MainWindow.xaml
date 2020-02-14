@@ -33,7 +33,11 @@
 				<MenuItem x:Name="MenuOpUppercase" Header="_Uppercase" Click="MenuOpUppercase_Click" />
 				<MenuItem Header="_Lowercase" />
 				<MenuItem Header="_Invert Case" />
-				
+				<MenuItem Header="_All">
+					<MenuItem Header="_Uppercase" />
+					<MenuItem Header="_Lowercase" />
+					<MenuItem Header="_Invert Case" />
+				</MenuItem>
 			</MenuItem>
 		</Menu>
 		<Label x:Name="lblEncoding" Content="File Encoding" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,398,0,0"/>
