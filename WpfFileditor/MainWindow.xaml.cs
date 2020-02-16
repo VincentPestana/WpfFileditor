@@ -218,10 +218,16 @@ namespace WpfFileditor
 			}
 			else
 			{
-				// Make the line uppercase
-				
+				// Make the line uppercase	
 			}
+		}
 
+		private void TextToLowercase()
+		{
+			if (txtMain.SelectionLength > 0)
+			{
+				txtMain.Text = txtMain.Text.Substring(0, txtMain.SelectionStart) + txtMain.SelectedText.ToLower() + txtMain.Text.Substring(txtMain.CaretIndex + txtMain.SelectionLength);
+			}
 		}
 
 		private void SetEncodingView()
@@ -313,6 +319,11 @@ namespace WpfFileditor
 		private void MenuOpUppercase_Click(object sender, RoutedEventArgs e)
 		{
 			TextToUppercase();
+		}
+
+		private void MenuOpLowercase_Click(object sender, RoutedEventArgs e)
+		{
+			TextToLowercase();
 		}
 		#endregion
 	}
