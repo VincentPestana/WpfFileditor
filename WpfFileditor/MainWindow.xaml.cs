@@ -230,6 +230,11 @@ namespace WpfFileditor
 			}
 		}
 
+		private void AllTextToUppercase()
+		{
+			txtMain.Text = txtMain.Text.ToUpper();
+		}
+
 		private void SetEncodingView()
 		{
 			lblEncoding.Content = FileHelper.GetEncoding(_fileName).HeaderName;
@@ -324,6 +329,11 @@ namespace WpfFileditor
 		private void MenuOpLowercase_Click(object sender, RoutedEventArgs e)
 		{
 			TextToLowercase();
+		}
+
+		private void MenuOpAllUppercase_Click(object sender, RoutedEventArgs e)
+		{
+			AllTextToUppercase();
 		}
 		#endregion
 	}
