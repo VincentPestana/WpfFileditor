@@ -35,7 +35,7 @@
 				<MenuItem Header="_Invert Case" />
 				<MenuItem Header="_All">
 					<MenuItem x:Name="MenuOpAllUppercase" Header="_Uppercase" Click="MenuOpAllUppercase_Click" />
-					<MenuItem Header="_Lowercase" />
+					<MenuItem x:Name="MenuOpAllLowercase" Header="_Lowercase" Click="MenuOpAllLowercase_Click" />
 					<MenuItem Header="_Invert Case" />
 				</MenuItem>
 			</MenuItem>
