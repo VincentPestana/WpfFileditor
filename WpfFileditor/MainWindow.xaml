@@ -38,6 +38,11 @@
 					<MenuItem x:Name="MenuOpAllLowercase" Header="_Lowercase" Click="MenuOpAllLowercase_Click" />
 					<MenuItem Header="_Invert Case" />
 				</MenuItem>
+				<Separator />
+				<MenuItem Header="_Sort">
+					<MenuItem Header="_Line Length" />
+					<MenuItem Header="_First Character" />
+				</MenuItem>
 			</MenuItem>
 		</Menu>
 		<Label x:Name="lblEncoding" Content="File Encoding" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,398,0,0"/>
