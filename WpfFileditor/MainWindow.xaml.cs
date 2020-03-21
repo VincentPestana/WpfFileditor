@@ -247,12 +247,15 @@ namespace WpfFileditor
 			lblEncoding.Content = FileHelper.GetEncoding(_fileName).HeaderName;
 		}
 
-		private void SortByLineLength()
+		private void SortByLineLength(bool descendSort = false)
 		{
 			var textLines = txtMain.Text.Split("\r\n");
 
 			//Blind algo
-			var sortedLines = textLines.OrderBy(x => x.Length);
+			var sortedLines = textLines.OrderBy(x => x.Length).ToList();
+			if (descendSort)
+				sortedLines.Reverse();
+
 			txtMain.Clear();
 			foreach (var line in sortedLines)
 			{
