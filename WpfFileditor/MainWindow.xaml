@@ -41,8 +41,8 @@
 				<Separator />
 				<MenuItem Header="_Sort">
 					<MenuItem x:Name="MenuSortLine" Header="_Line Length">
-						<MenuItem x:Name="MenuSortLineAsc" Header="Line Length _Ascending" Click="MenuSortLineAsc_Click" />
-						<MenuItem x:Name="MenuSortLineDesc" Header="Line Length _Descending" Click="MenuSortLineDesc_Click" />
+						<MenuItem x:Name="MenuSortLineAsc" Header="_Ascending" Click="MenuSortLineAsc_Click" />
+						<MenuItem x:Name="MenuSortLineDesc" Header="_Descending" Click="MenuSortLineDesc_Click" />
 					</MenuItem>
 					<MenuItem Header="_First Character" />
 				</MenuItem>
