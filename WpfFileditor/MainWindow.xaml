@@ -40,7 +40,7 @@
 				</MenuItem>
 				<Separator />
 				<MenuItem Header="_Sort">
-					<MenuItem Header="_Line Length" />
+					<MenuItem x:Name="MenuSortLine" Header="_Line Length" Click="MenuSortLine_Click" />
 					<MenuItem Header="_First Character" />
 				</MenuItem>
 			</MenuItem>

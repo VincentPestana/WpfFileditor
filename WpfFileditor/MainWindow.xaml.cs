@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace WpfFileditor
 {
@@ -245,6 +247,19 @@ namespace WpfFileditor
 			lblEncoding.Content = FileHelper.GetEncoding(_fileName).HeaderName;
 		}
 
+		private void SortByLineLength()
+		{
+			var textLines = txtMain.Text.Split("\r\n");
+
+			//Blind algo
+			var sortedLines = textLines.OrderBy(x => x.Length);
+			txtMain.Clear();
+			foreach (var line in sortedLines)
+			{
+				txtMain.AppendText(line + Environment.NewLine);
+			}
+		}
+
 		#region Form events
 		private void MenuItem_Click(object sender, RoutedEventArgs e)
 		{
@@ -344,6 +359,11 @@ namespace WpfFileditor
 		private void MenuOpAllLowercase_Click(object sender, RoutedEventArgs e)
 		{
 			AllTextToLowercase();
+		}
+
+		private void MenuSortLine_Click(object sender, RoutedEventArgs e)
+		{
+			this.Dispatcher.Invoke(new Action(SortByLineLength), DispatcherPriority.Normal);
 		}
 		#endregion
 	}
