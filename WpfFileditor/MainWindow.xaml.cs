@@ -364,10 +364,16 @@ namespace WpfFileditor
 			AllTextToLowercase();
 		}
 
-		private void MenuSortLine_Click(object sender, RoutedEventArgs e)
+		private void MenuSortLineAsc_Click(object sender, RoutedEventArgs e)
 		{
-			this.Dispatcher.Invoke(new Action(SortByLineLength), DispatcherPriority.Normal);
+			this.Dispatcher.Invoke(new Action(() => SortByLineLength()), DispatcherPriority.Normal);
+		}
+
+		private void MenuSortLineDesc_Click(object sender, RoutedEventArgs e)
+		{
+			this.Dispatcher.Invoke(new Action(() => SortByLineLength(true)), DispatcherPriority.Normal);
 		}
 		#endregion
+
 	}
 }
