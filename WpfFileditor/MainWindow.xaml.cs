@@ -263,6 +263,11 @@ namespace WpfFileditor
 			}
 		}
 
+		private void InvertCaseAllText()
+		{
+			throw new NotImplementedException();
+		}
+
 		#region Form events
 		private void MenuItem_Click(object sender, RoutedEventArgs e)
 		{
@@ -372,6 +377,11 @@ namespace WpfFileditor
 		private void MenuSortLineDesc_Click(object sender, RoutedEventArgs e)
 		{
 			this.Dispatcher.Invoke(new Action(() => SortByLineLength(true)), DispatcherPriority.Normal);
+		}
+
+		private void MenuOpAllInvertCase_Click(object sender, RoutedEventArgs e)
+		{
+			InvertCaseAllText();
 		}
 		#endregion
 

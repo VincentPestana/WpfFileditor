@@ -32,11 +32,11 @@
 			<MenuItem x:Name="MenuOperations" Header="_Operations">
 				<MenuItem x:Name="MenuOpUppercase" Header="_Uppercase" Click="MenuOpUppercase_Click" />
 				<MenuItem x:Name="MenuOpLowercase" Header="_Lowercase" Click="MenuOpLowercase_Click" />
-				<MenuItem Header="_Invert Case" />
+				<MenuItem x:Name="MenuOpInvertCase" Header="_Invert Case" />
 				<MenuItem Header="_All">
 					<MenuItem x:Name="MenuOpAllUppercase" Header="_Uppercase" Click="MenuOpAllUppercase_Click" />
 					<MenuItem x:Name="MenuOpAllLowercase" Header="_Lowercase" Click="MenuOpAllLowercase_Click" />
-					<MenuItem Header="_Invert Case" />
+					<MenuItem x:Name="MenuOpAllInvertCase" Header="_Invert Case" Click="MenuOpAllInvertCase_Click" />
 				</MenuItem>
 				<Separator />
 				<MenuItem Header="_Sort">
